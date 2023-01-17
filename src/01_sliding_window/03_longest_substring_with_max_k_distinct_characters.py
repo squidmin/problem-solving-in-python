@@ -2,7 +2,6 @@
 Given a string, find the length of the longest substring in it with no more than K distinct characters.
     You can assume that K is less than or equal to the length of the given string.
 
-
 Example 1:
     Input: String="araaci", K=2
     Output: 4
@@ -65,9 +64,9 @@ def longest_substring_with_k_distinct(str_1, k):
 
 
 def main():
-  print("Length of the longest substring: " + str(longest_substring_with_k_distinct("araaci", 2)))
-  print("Length of the longest substring: " + str(longest_substring_with_k_distinct("araaci", 1)))
-  print("Length of the longest substring: " + str(longest_substring_with_k_distinct("cbbebi", 3)))
+  print("Length of the longest substring: " + str(longest_substring_with_k_distinct("araaci", 2)))  # Expected output: 4
+  print("Length of the longest substring: " + str(longest_substring_with_k_distinct("araaci", 1)))  # Expected output: 2
+  print("Length of the longest substring: " + str(longest_substring_with_k_distinct("cbbebi", 3)))  # Expected output: 5
 
 
 main()
