@@ -19,7 +19,7 @@ Time complexity: O(N * K)
 
 Space complexity: O(1)
 '''
-def max_sum_subarray_of_size_k_brute_force(k, arr):
+def max_sum_subarray_of_size_k_brute_force(k, arr) -> int:
   max_sum = 0
   window_sum = 0
   for i in range(len(arr) - k + 1):
@@ -27,6 +27,7 @@ def max_sum_subarray_of_size_k_brute_force(k, arr):
     for j in range(i, i + k):
       window_sum += arr[j]
     max_sum = max(max_sum, window_sum)
+
   return max_sum
 
 '''
@@ -36,6 +37,21 @@ Time complexity: O(N)
 Space complexity: O(1)
 '''
 def max_sum_subarray_of_size_k_optimized(k, arr):
+  """Finds the maximum sum of contiguous subarrays of size `k` in an array of positive numbers.
+
+  Parameters
+  ----------
+  k : int
+      A target size for contiguous subarrays in `arr`.
+  arr : list
+      The input array across which the sliding window traverses.
+
+  Returns
+  -------
+  int
+      The maximum sum of contiguous subarrays of size `k`.
+  """
+  
   max_sum, window_sum = 0, 0
   window_start = 0
   for window_end in range(len(arr)):
