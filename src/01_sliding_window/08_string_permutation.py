@@ -9,7 +9,7 @@ Permutation is defined as the re-arranging of the characters of the string. For 
   5. cab
   6. cba
 
-If a string has `n` distinct characters, it will have n! permutations.
+If a string has `n` distinct characters, it will have `n!` permutations.
 
 Example 1:
   Input: String="oidbcaf", Pattern="abc"
@@ -32,7 +32,7 @@ Example 4:
   Explanation: The string contains "acb" which is a permutation of the given pattern.
 
 Time complexity:
-  O(N+M), where 'N' and 'M' are the number of characters in the input string and the pattern, respectively.
+  O(N+M), where `N` and `M` are the number of characters in the input string and the pattern, respectively.
 
 Space complexity:
   O(M) since, in the worst case, the whole pattern can have distinct characters that will go into the hashmap.
