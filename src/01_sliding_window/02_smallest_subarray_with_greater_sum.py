@@ -1,6 +1,6 @@
 import math
 
-'''
+"""
 Problem statement
 Given an array of positive numbers and a positive number `S,` find the length of the smallest
   contiguous subarray whose sum is greater than or equal to `S`.
@@ -21,15 +21,15 @@ Example 3:
     Output: 3
     Explanation: Smallest subarrays with a sum greater than or equal to '8' are [3, 4, 1]
     or [1, 1, 6].
-'''
+"""
 
-'''
+"""
 Time complexity: The outer for loop runs for all elements, and the inner while loop processes
   each element only once; therefore, the time complexity of the algorithm will be O(N+N),
   which is asymptotically equivalent to O(N).
 
 Space complexity: O(1)
-'''
+"""
 
 def smallest_subarray_sum(s, arr):
   """Finds the length of the smallest contiguous subarray whose sum is greater than or equal to `S`.

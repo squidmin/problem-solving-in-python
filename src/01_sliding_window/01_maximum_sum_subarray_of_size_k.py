@@ -1,4 +1,4 @@
-'''
+"""
 Given an array of positive numbers and a positive number `k`, find the maximum sum of
   its contiguous subarrays of size `k`.
 
@@ -11,14 +11,14 @@ Example 2:
 Input: [2, 3, 4, 1, 5], k=2
 Output: 7
 Explanation: Subarray with maximum sum is [3, 4].
-'''
+"""
 
-'''
+"""
 Time complexity: O(N * K)
   where N is the total number of elements in the given array.
 
 Space complexity: O(1)
-'''
+"""
 def max_sum_subarray_of_size_k_brute_force(k, arr) -> int:
   max_sum = 0
   window_sum = 0
@@ -30,12 +30,12 @@ def max_sum_subarray_of_size_k_brute_force(k, arr) -> int:
 
   return max_sum
 
-'''
+"""
 Time complexity: O(N)
   where N is the total number of elements in the given array.
 
 Space complexity: O(1)
-'''
+"""
 def max_sum_subarray_of_size_k_optimized(k, arr):
   """Finds the maximum sum of contiguous subarrays of size `k` in an array of positive numbers.
 

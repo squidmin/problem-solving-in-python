@@ -1,4 +1,4 @@
-'''
+"""
 You are visiting a farm to collect fruits. The farm has a single row of
   fruit trees. You will be given two baskets, and your goal is to pick as
   many fruits as possible to be placed in the given baskets.
@@ -28,7 +28,7 @@ Example 2:
 
 Hint: Use a hashmap to keep track of the occurrences of two distinct types of fruit.
   Shrink the window while the number of distinct types of fruit is greater than 2.
-'''
+"""
 
 def fruits_into_baskets(fruits):
   window_start = max_length = 0
