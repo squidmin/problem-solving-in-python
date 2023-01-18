@@ -32,10 +32,10 @@ Example 4:
   Explanation: The string contains "acb" which is a permutation of the given pattern.
 
 Time complexity:
-The algorithm's complexity is O(N+M), where 'N' and 'M' are the number of characters in the input string and the pattern, respectively.
+  O(N+M), where 'N' and 'M' are the number of characters in the input string and the pattern, respectively.
 
 Space complexity:
-The algorithm's space complexity is O(M) since, in the worst case, the whole pattern can have distinct characters that will go into the hashmap.
+  O(M) since, in the worst case, the whole pattern can have distinct characters that will go into the hashmap.
 
 Solution:
   Use a char-to-int hashmap to keep track of the unique characters.
