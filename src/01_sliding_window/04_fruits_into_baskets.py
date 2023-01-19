@@ -30,34 +30,35 @@ Hint: Use a hashmap to keep track of the occurrences of two distinct types of fr
   Shrink the window while the number of distinct types of fruit is greater than 2.
 """
 
+
 def fruits_into_baskets(fruits):
-  window_start = max_length = 0
-  fruit_frequency = {}
+    window_start = max_length = 0
+    fruit_frequency = {}
 
-  # Try to extend the range [window_start, window_end].
-  for window_end in range(len(fruits)):
-    right_fruit = fruits[window_end]
-    if right_fruit not in fruit_frequency:
-      fruit_frequency[right_fruit] = 0
-    fruit_frequency[right_fruit] += 1
+    # Try to extend the range [window_start, window_end].
+    for window_end in range(len(fruits)):
+        right_fruit = fruits[window_end]
+        if right_fruit not in fruit_frequency:
+            fruit_frequency[right_fruit] = 0
+        fruit_frequency[right_fruit] += 1
 
-    # Shrink the sliding window, until we are left with `2` fruits in the fruit frequency dictionary.
-    while len(fruit_frequency) > 2:
-      left_fruit = fruits[window_start]
-      fruit_frequency[left_fruit] -= 1
-      if fruit_frequency[left_fruit] == 0:
-        del fruit_frequency[left_fruit]
-      window_start += 1  # Shrink the window.
-    max_length = max(max_length, window_end - window_start + 1)
-  return max_length
+        # Shrink the sliding window, until we are left with `2` fruits in the fruit frequency dictionary.
+        while len(fruit_frequency) > 2:
+            left_fruit = fruits[window_start]
+            fruit_frequency[left_fruit] -= 1
+            if fruit_frequency[left_fruit] == 0:
+                del fruit_frequency[left_fruit]
+            window_start += 1  # Shrink the window.
+        max_length = max(max_length, window_end - window_start + 1)
+    return max_length
 
 
 def main():
-  print('Expected output: 3')
-  print("Actual output: " + str(fruits_into_baskets(['A', 'B', 'C', 'A', 'C'])))
-  print('=====================')
-  print('Expected output: 5')
-  print("Actual output: " + str(fruits_into_baskets(['A', 'B', 'C', 'B', 'B', 'C'])))
+    print('Expected output: 3')
+    print("Actual output: " + str(fruits_into_baskets(['A', 'B', 'C', 'A', 'C'])))
+    print('=====================')
+    print('Expected output: 5')
+    print("Actual output: " + str(fruits_into_baskets(['A', 'B', 'C', 'B', 'B', 'C'])))
 
 
 main()

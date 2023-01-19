@@ -39,34 +39,38 @@ Space complexity: The algorithm’s space complexity is O(K), as it will store a
   of K + 1 characters in the HashMap.
 """
 
+
 def longest_substring_with_k_distinct(str_1, k):
-  window_start = 0
-  max_length = 0
-  char_frequency = {}
+    window_start = 0
+    max_length = 0
+    char_frequency = {}
 
-  # In the following loop we'll try to extend the range [window_start, window_end].
-  for window_end in range(len(str_1)):
-    right_char = str_1[window_end]
-    if right_char not in char_frequency:
-      char_frequency[right_char] = 0
-    char_frequency[right_char] += 1
+    # In the following loop we'll try to extend the range [window_start, window_end].
+    for window_end in range(len(str_1)):
+        right_char = str_1[window_end]
+        if right_char not in char_frequency:
+            char_frequency[right_char] = 0
+        char_frequency[right_char] += 1
 
-    # Shrink the sliding window, until we are left with 'k' distinct characters in the char_frequency.
-    while len(char_frequency) > k:
-      left_char = str_1[window_start]
-      char_frequency[left_char] -= 1
-      if char_frequency[left_char] == 0:
-        del char_frequency[left_char]
-      window_start += 1  # Shrink the window.
-    # Remember the maximum length so far.
-    max_length = max(max_length, window_end - window_start + 1)
-  return max_length
+        # Shrink the sliding window, until we are left with 'k' distinct characters in the char_frequency.
+        while len(char_frequency) > k:
+            left_char = str_1[window_start]
+            char_frequency[left_char] -= 1
+            if char_frequency[left_char] == 0:
+                del char_frequency[left_char]
+            window_start += 1  # Shrink the window.
+        # Remember the maximum length so far.
+        max_length = max(max_length, window_end - window_start + 1)
+    return max_length
 
 
 def main():
-  print("Length of the longest substring: " + str(longest_substring_with_k_distinct("araaci", 2)))  # Expected output: 4
-  print("Length of the longest substring: " + str(longest_substring_with_k_distinct("araaci", 1)))  # Expected output: 2
-  print("Length of the longest substring: " + str(longest_substring_with_k_distinct("cbbebi", 3)))  # Expected output: 5
+    print(
+        "Length of the longest substring: " + str(longest_substring_with_k_distinct("araaci", 2)))  # Expected output: 4
+    print(
+        "Length of the longest substring: " + str(longest_substring_with_k_distinct("araaci", 1)))  # Expected output: 2
+    print(
+        "Length of the longest substring: " + str(longest_substring_with_k_distinct("cbbebi", 3)))  # Expected output: 5
 
 
 main()
