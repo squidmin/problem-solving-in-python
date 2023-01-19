@@ -18,7 +18,7 @@ Explanation: The numbers at index 0 and 2 add up to 11: 2+9=11
 """
 
 
-def pair_with_targetsum(arr, target_sum):
+def pair_with_targetsum_bruteforce(arr, target_sum):
     """
     Time complexity: The time complexity of the above algorithm will be O(N), where N is the
       total number of elements in the given array.
@@ -38,7 +38,7 @@ def pair_with_targetsum(arr, target_sum):
     return [-1, -1]
 
 
-def pair_with_targetsum(arr, target_sum):
+def pair_with_targetsum_optimized(arr, target_sum):
     """
     Time complexity: O(N)
       where N is the total number of elements in the given array.
@@ -56,8 +56,8 @@ def pair_with_targetsum(arr, target_sum):
 
 
 def main():
-    print(pair_with_targetsum([1, 2, 3, 4, 6], 6))
-    print(pair_with_targetsum([2, 5, 9, 11], 11))
+    print(pair_with_targetsum_optimized([1, 2, 3, 4, 6], 6))
+    print(pair_with_targetsum_optimized([2, 5, 9, 11], 11))
 
 
 main()
