@@ -6,13 +6,6 @@ class ListNode:
 class LinkedListCycle:
     @staticmethod
     def has_cycle(head):
-        slow = head
-        fast = head
-        while fast is not None and fast.next is not None:
-            fast = fast.next.next
-            slow = slow.next
-            if slow == fast:
-                return True  # found the cycle
         return False
 
 if __name__ == "__main__":
